@@ -6,23 +6,19 @@ import City from '../containers/city';
 import { setCities } from '../actions';
 
 class CityList extends Component {
-  // static defaultProps = {
-  //   cities: [
-  // { name: "Paris", address: "16 Villa Gaudelet, 75011 Paris", slug: "paris" },
-  // { name: "London", address: "14-22 Elder St, London E1 6BT", slug: "london" }
-  //     ]
-  //   }
+  componentWillMount() {
+    this.props.setCities();
+  }
+
   renderList() {
     return this.props.cities.map((city) => {
-      return (
-        <City city={city} key={city.name} />
-      );
+      return <City city={city} key={city.name} />;
     });
   }
 
   render() {
     return (
-      <div className="list-group-item">
+      <div className="list-group-item cities">
         {this.renderList}
       </div>
     );
