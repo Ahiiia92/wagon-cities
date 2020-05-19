@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class City extends Component {
-  render() {
-    return (
-      <div className="card-product active-city">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div className="card-product-infos">
-          <h2>{this.props.name}</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { selectCity } from '../actions';
+
+const City = (props) => {
+  return (
+    <div className="card-product active-city list-group-item">
+      <div className="card-product-infos">
+        <h2>TITLE HERE {props.city.name}</h2>
+        <p>{props.city.address}</p>
       </div>
-    );
-  }
+    </div>
+  );
+};
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectCity, dispatch });
 }
 
-export default City;
+export default connect(null, mapDispatchToProps)(City);
