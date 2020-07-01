@@ -1,6 +1,6 @@
 import { SELECTED_CITY } from '../actions';
 
-const activeCityReducer = (state, action) => {
+const activeCityReducer = (state = null, action) => {
   if (state === undefined) {
     return [];
   }

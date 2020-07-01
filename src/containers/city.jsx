@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { selectCity } from '../actions';
 
 const City = (props) => {
-  console.log("City printed");
-  console.log(props.selectCity(props.city));
-
   return (
-    <div className="card-product" onClick={() => props.selectCity(props.city)} >
+    <div
+    className="card-product"
+    onClick={() => props.selectCity(props.city)}
+    >
       <div className="card-product-infos">
         <h2>{props.city.name}</h2>
         <p>{props.city.address}</p>
