@@ -10,16 +10,18 @@ class CityList extends Component {
     this.props.setCities();
   }
 
-  renderList() {
-    return this.props.cities.map((city) => {
-      return <City city={city} key={city.name} />;
-    });
-  }
+  // renderList() {
+  //   return this.props.cities.map((city) => {
+  //     return <City city={city} key={city.name} />
+  //   });
+  // }
 
   render() {
     return (
       <div className="list-group-item cities">
-        {this.renderList}
+        {this.props.cities.map((city) => {
+          return <City city={city} key={city.name} />
+        })}
       </div>
     );
   }
@@ -32,7 +34,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     cities: state.cities
-  };
+  }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityList);

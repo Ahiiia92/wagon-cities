@@ -1,15 +1,27 @@
+// internal Libraries
+@import 'cards';
+
+$english-violet: #5b4e77;
+$cyber-grape: #5b4e77;
+$denim: #2e5eaa;
+$turquoise: #55d6be;
+$light-green: #7cea9c;
+
+
 body {
   color: black;
-  background-color: gray;
+  background-color: $english-violet;
 }
 
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
+
   .cities {
     width: 30%;
   }
+
   .active-city {
     width: 70%;
     margin-left: 20px;
@@ -17,6 +29,8 @@ body {
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-color: #55d6be ;
+
     h3 {
       margin-top: 0;
     }
@@ -26,6 +40,5 @@ body {
 .list-group-item {
   background-color: transparent;
   cursor: pointer;
+  border: none;
 }
-
-@import 'cards';

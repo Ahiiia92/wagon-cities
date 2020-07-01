@@ -2,13 +2,14 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import selectCity from '../actions';
+import { selectCity } from '../actions';
 
 const City = (props) => {
   return (
-    <div className="card-product" onClick={() => props.selectCtiy(props.city)} >
+    <div className="card-product" onClick={() => props.selectCity(props.city)} >
       <div className="card-product-infos">
-        NOTHING
+        <h2>{props.city.name}</h2>
+        <p>{props.city.address}</p>
       </div>
     </div>
   );
