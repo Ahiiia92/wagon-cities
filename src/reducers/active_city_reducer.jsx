@@ -1,11 +1,15 @@
-export default function(state, action) {
+import { SELECTED_CITY } from '../actions';
+
+const activeCityReducer = (state, action) => {
   if (state === undefined) {
-    return null;
+    return [];
   }
   switch (action.type) {
-    case 'SELECTED_CITY':
+    case SELECTED_CITY:
       return action.payload;
     default:
       return state;
   }
-}
+};
+
+export default activeCityReducer;

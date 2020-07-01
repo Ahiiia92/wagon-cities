@@ -8,6 +8,7 @@ import { setCities } from '../actions';
 class CityList extends Component {
   componentWillMount() {
     this.props.setCities();
+    console.log(this.props.setCities);
   }
 
   // renderList() {

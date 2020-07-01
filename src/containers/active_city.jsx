@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { selectCity } from '../actions';
+
 class ActiveCity extends Component {
-  componentWillMount(city) {
-    this.props.selectCity(this.props.city);
+  componentWillMount() {
+    this.props.selectCity(this.props);
+    console.log(this.props.selectCity);
   }
 
   render() {
-    if (!this.props.selectCity) {
+    if (!this.props.city) {
       return (
         <div className="active-city">
           <p>Select a city...</p>
@@ -34,8 +37,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    selectCity: state.selectCity
-  };
+    selectCity: state.SelectCity
+  }
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(ActiveCity);
+export default connect(mapStateToProps, mapDispatchToProps)(ActiveCity);

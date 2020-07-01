@@ -2,7 +2,7 @@
 import cities from '../../data/cities';
 
 export const SET_CITIES = "SET_CITIES";
-export const SELECTED_CITY = 'SELECTED_CITY';
+export const SELECTED_CITY = "SELECTED_CITY";
 
 export function setCities() {
   // API calls if we have one

@@ -23,13 +23,15 @@ body {
   }
 
   .active-city {
-    width: 70%;
+    width: 65%;
     margin-left: 20px;
     margin-bottom: 20px;
     padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #55d6be ;
+    // border: 1px solid #ddd;
+    // border-radius: 4px;
+    background-color: $turquoise;
+    margin-top: 20px;
+    color: $denim;
 
     h3 {
       margin-top: 0;
